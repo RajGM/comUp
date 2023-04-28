@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "author": "RajGM",
+  "homepage_url": "https://github.com/RajGM",
+  "name": "YT Firebase",
+  "short_name": "YTFire",
+  "description": "YT Firebase powered by community",
+  "version": "1.35",
+  "extNameCode" : "yts",
+  "minimum_chrome_version": "41",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "css": ["yts-controls.css"],
+      "js": ["yts-script-injector.js"]
+    }
+  ],
+  "background": {
+    "page": "yts-background.html",
+    "persistent": false
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    "ChromeStorageUpdateSynchronizer.mjs",
+    "yts-TimePositionMemory.mjs",
+    "yts-controls.js",
+    "yts-util.mjs",
+    "saved-settings-misc.mjs",
+    "icons/circ-seek.svg",
+    "icons/rect-seek.png"
+  ],
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "commands": {
+
+  }
+}
